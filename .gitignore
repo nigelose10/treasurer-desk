@@ -1,0 +1,17 @@
+.env
+.state/
+.switch/
+.venv
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+demo/takes/
+demo/raw/
+*.webm
+.playwright/
+node_modules/
+dist/
+*.log
