@@ -1,0 +1,21 @@
+# Machine-readable club reimbursement policy.
+# The auditor copies this into the Switch room document `club-policy` on first
+# boot and re-reads that document on every claim. Edit the room document (or
+# this file, then restart with DESK_SYNC_POLICY=always) to change the rules.
+# Amounts are decimal strings. The model is not allowed to change a verdict.
+
+currency: USD
+max_claim_amount: "75.00"
+preapproval_threshold: "200.00"
+receipt_max_age_days: 14
+banned_categories:
+  - alcohol
+default_event_budget: "150.00"
+event_budgets:
+  thursday-meetup: "200.00"
+category_keywords:
+  alcohol: [beer, wine, alcohol, cocktail, vodka, whiskey, soju]
+  food: [pizza, snacks, coffee, lunch, dinner, catering, food, bagel, bagels]
+  travel: [uber, lyft, taxi, transit, metro, train]
+  supplies: [paper, markers, supplies, cups, plates, napkins]
+  venue: [venue, "room rental", booking]

@@ -1,0 +1,15 @@
+# Fictional club. The recorder types these into Mattermost.
+# {claim} is filled from the claim id the intake agent posts.
+steps:
+  - who: maya
+    say: "@intake I paid $90.00 for pizza for Thursday's meetup on 2026-11-03, receipt photo-text below"
+    wait: "FLAG"
+    caption: "Maya files a claim. Intake and the auditor answer live."
+  - who: user
+    say: "@bookkeeper adjust {claim} amount=38.00"
+    wait: "Approved"
+    caption: "The treasurer adjusts the flagged amount. Rules mode books 38.00."
+  - who: user
+    say: "@bookkeeper summary"
+    wait: "Month summary"
+    caption: "The bookkeeper reads the ledger document back. No money moves."

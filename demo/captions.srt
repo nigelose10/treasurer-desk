@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:08,000
+Fictional demo data. Rules mode: no LLM key. Replies are generated live.
+
+2
+00:00:08,000 --> 00:00:17,240
+Maya files a claim. Intake and the auditor answer live.
+
+3
+00:00:17,240 --> 00:00:33,400
+The treasurer adjusts the flagged amount. Rules mode books 38.00.
+
+4
+00:00:33,400 --> 00:00:48,130
+The bookkeeper reads the ledger document back. No money moves.
+
+5
+00:00:48,130 --> 00:00:56,130
+Ledger document updated in the Switch room. No money moved.

@@ -1,0 +1,25 @@
+# Adds the Treasurer Desk process to the Switch compose project.
+# Switch itself is downloaded by scripts/get-switch.sh and is not copied here.
+services:
+  desk:
+    profiles: ["desk"]
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    env_file:
+      - ../.env
+    environment:
+      SWITCH_URL: http://switch:8000
+      STATE_DIR: /state
+      POLICY_PATH: /app/policy/club-policy.yaml
+      LLM_MODE: ${LLM_MODE:-rules}
+      ROOM_NAME: ${ROOM_NAME:-club-finance}
+      ROOM_USERS: ${ROOM_USERS:-user,maya,sam}
+      TREASURER_USERNAMES: ${TREASURER_USERNAMES:-user}
+      DESK_SYNC_POLICY: ${DESK_SYNC_POLICY:-seed}
+    volumes:
+      - ../.state:/state
+    depends_on:
+      switch:
+        condition: service_started
+    restart: unless-stopped

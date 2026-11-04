@@ -1,0 +1,92 @@
+# Parser cases. `today` in the test is 2026-11-04.
+cases:
+  - text: "I paid $42.30 for pizza"
+    amount: "42.30"
+    category: food
+    event: unspecified
+  - text: "USD 42.30 for coffee"
+    amount: "42.30"
+    category: food
+  - text: "paid 75 dollars for snacks"
+    amount: "75.00"
+    category: food
+  - text: "$1,234.50 venue deposit"
+    amount: "1234.50"
+    category: venue
+  - text: "$75 for paper and markers"
+    amount: "75.00"
+    category: supplies
+  - text: "€12.50 coffee"
+    amount: "12.50"
+    currency: EUR
+    category: food
+  - text: "£9.00 train"
+    amount: "9.00"
+    currency: GBP
+    category: travel
+  - text: "claim 42.30 pizza 2026-11-03"
+    amount: "42.30"
+    category: food
+    date: "2026-11-03"
+  - text: "claim $19.99 uber 11/02/2026 event:airport-run"
+    amount: "19.99"
+    category: travel
+    date: "2026-11-02"
+    event: airport-run
+  - text: "$8 bagels on Nov 1, 2026"
+    amount: "8.00"
+    category: food
+    date: "2026-11-01"
+  - text: "$5 coffee yesterday"
+    amount: "5.00"
+    category: food
+    date: "2026-11-03"
+  - text: "$12 lunch today"
+    amount: "12.00"
+    category: food
+    date: "2026-11-04"
+  - text: "I paid $90.00 for pizza for Thursday's meetup on 2026-11-03, receipt photo-text below"
+    amount: "90.00"
+    category: food
+    event: thursday-meetup
+    date: "2026-11-03"
+    receipt_contains: photo
+  - text: "beer $15 on 2026-11-01"
+    amount: "15.00"
+    category: alcohol
+    date: "2026-11-01"
+  - text: "wine for the social $22.00 2026-10-01"
+    amount: "22.00"
+    category: alcohol
+    date: "2026-10-01"
+  - text: "$18.00 plates event:thursday-meetup"
+    amount: "18.00"
+    category: supplies
+    event: thursday-meetup
+  - text: "($4.50) coffee"
+    amount: "4.50"
+    category: food
+  - text: "cost was 42.30 USD"
+    amount: "42.30"
+    currency: USD
+  - text: "uber $23.40 on 2026-11-04"
+    amount: "23.40"
+    category: travel
+    date: "2026-11-04"
+  - text: "room rental $60 on November 2 2026"
+    amount: "60.00"
+    category: venue
+    date: "2026-11-02"
+  - text: "I think I paid something for snacks"
+    amount: null
+  - text: "about forty dollars for pizza"
+    amount: null
+  - text: "$10 pizza and $5 soda"
+    ambiguous: true
+  - text: "$0.00 for nothing on 2026-11-04"
+    amount: "0.00"
+    date: "2026-11-04"
+  - text: "  \n$42.30\tfor coffee on 2026-11-03\n"
+    amount: "42.30"
+    category: food
+    date: "2026-11-03"
